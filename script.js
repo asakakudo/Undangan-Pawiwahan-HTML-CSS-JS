@@ -252,13 +252,16 @@ form.addEventListener("submit", async function (e) {
   const data = { nama, alamat, kehadiran, pesan };
   const url = "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec";
 
-  const res = await fetch(url, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(data)
-  });
-    
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
     const result = await res.json();
+    console.log("Response dari Google Script:", result); // 🔎 log hasil
+
     if (result.result === "success") {
       form.reset();
       loadMessages(); // refresh komentar dari server
@@ -272,29 +275,6 @@ form.addEventListener("submit", async function (e) {
     loader.style.display = "none"; // sembunyikan loader
   }
 });
-
-// === Ambil komentar lama dari Google Sheets ===
-async function loadMessages() {
-  try {
-    const res = await fetch("https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec");
-    const data = await res.json();
-
-    messages.innerHTML = ""; // hapus isi lama
-
-    // tampilkan komentar terbaru di atas
-    data.reverse().forEach(item => {
-      const msg = document.createElement("div");
-      msg.classList.add("message-item");
-      msg.innerHTML = `<b>${item.nama}</b> (${item.kehadiran})<br>${item.pesan}`;
-      messages.appendChild(msg);
-    });
-  } catch (err) {
-    console.error("Gagal ambil komentar:", err);
-  }
-}
-
-// jalankan saat halaman dibuka
-document.addEventListener("DOMContentLoaded", loadMessages);
 
 // === MUSIC CONTROL ===
 const musicControl = document.getElementById("musicControl");
@@ -320,6 +300,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
