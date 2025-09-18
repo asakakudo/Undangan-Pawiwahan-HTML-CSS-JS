@@ -302,9 +302,9 @@ async function loadMessages() {
   }
 }
 
-
 // jalankan saat halaman dibuka
 document.addEventListener("DOMContentLoaded", loadMessages);
+
 
 
 // === MUSIC CONTROL ===
@@ -334,6 +334,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
