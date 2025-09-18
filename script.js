@@ -252,7 +252,7 @@ form.addEventListener("submit", async function (e) {
   const data = { nama, alamat, kehadiran, pesan };
 
   try {
-    const res = await fetch("YOUR_GOOGLE_SCRIPT_URL", {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec", {
       method: "POST",
       body: JSON.stringify(data),
     });
@@ -319,6 +319,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
