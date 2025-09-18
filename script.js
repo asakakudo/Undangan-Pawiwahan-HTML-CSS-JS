@@ -1,7 +1,7 @@
 // === SETTING JSONBIN ===
-const BIN_ID = "68cbde2ad0ea881f4082043b";
+const BIN_ID = "68cbe061ae596e708ff2d2be";
 const API_KEY = "$2a$10$OBOE7eRlL5A1TDPHUXLlM.IWb3gdDbpIG1KVpdBvn7m87qAxyh0/m";
-const URL = `https://api.jsonbin.io/v3/b/68cbde2ad0ea881f4082043b`;
+const URL = `https://api.jsonbin.io/v3/b/68cbe061ae596e708ff2d2be`;
 
 
 // === MASUK KE UNDANGAN ===
@@ -260,3 +260,4 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
