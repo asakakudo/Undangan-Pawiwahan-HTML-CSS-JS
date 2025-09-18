@@ -644,16 +644,47 @@ h2.animate {
   }
 }
 
+/* Atur ukuran ornament-bottom lebih kecil di HP */
+@media (max-width: 768px) {
+  .page2 .ornament-bottom {
+    width: 200px !important;
+    bottom: -80px; /* biar gak kepotong */
+  }
+}
+
+@media (max-width: 480px) {
+  .page2 .ornament-bottom {
+    width: 150px !important;
+    bottom: -60px;
+  }
+}
+
+/* Override text di page2 biar lebih kecil di mobile */
+@media (max-width: 768px) {
+  .page2 h2 {
+    font-size: 28px;
+  }
+  .page2 p {
+    font-size: 14px;
+  }
+  .page2 .nama {
+    font-size: 22px;
+  }
+  .page2 .desc {
+    font-size: 12px;
+  }
+}
+
 /* Foto pengantin lebih kecil di HP */
 @media (max-width: 768px) {
   .foto-pengantin {
-    max-width: 280px;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .foto-pengantin {
-    max-width: 200px;
+    max-width: 250px;
   }
 }
 
@@ -1415,5 +1446,6 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
