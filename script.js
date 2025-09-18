@@ -250,7 +250,9 @@ form.addEventListener("submit", async function (e) {
   loader.style.display = "block"; // tampilkan loader
 
   const data = { nama, alamat, kehadiran, pesan };
-  const url = "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec");
+  const target = "https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec";
+  const url = "https://api.allorigins.win/raw?url=" + encodeURIComponent(target);
+
 
   try {
     const res = await fetch(url, {
@@ -300,6 +302,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
