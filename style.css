@@ -197,6 +197,36 @@ h2.animate {
   margin: 10px 0 20px;
 }
 
+.guest-wrapper {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Sans1', sans-serif; /* bisa ganti sesuai font kamu */
+  color: #fff; /* putih biar kontras di splash */
+}
+
+.guest-wrapper p {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+#guestName {
+  font-family: 'Script1', cursive; /* kasih font elegan */
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffd700; /* emas */
+  margin: 6px 0;
+  text-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 480px) {
+  #guestName {
+    font-size: 22px;
+  }
+  .guest-wrapper p {
+    font-size: 14px;
+  }
+}
+
 .btn-buka {
   padding: 14px 30px;
   font-size: 9px;
@@ -1446,6 +1476,7 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
 
