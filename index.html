@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Nova & Maha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-fixed"></div>
+  <section class="splash" id="splash">
+  <div class="splash-content">
+    <h1>Undangan Pernikahan</h1>
+    <h2>Nova & Maha</h2>
+    <p class="tanggal">25.09.2025</p>
+    <button class="btn-buka" onclick="enterSite()">Buka Undangan</button>
+  </div>
+</section>
+
+  <!-- Halaman 1 -->
+<section class="page1" id="page1" loading="lazy" style="display:none;">
+  <img src="save-the-date.png" alt="Teks Undangan" class="page1-text">
+</section>
+
+  <!-- Halaman 2 -->
+  <section class="page2" id="page2" style="display:none;">
+  <img src="ornamen.png" alt="Ornamen" loading="lazy" class="ornamen ornamen-top-left">
+  <img src="ornamen.png" alt="Ornamen" loading="lazy" class="ornamen ornamen-top-right">
+  <div class="salam-wrapper salam-pembuka">
+    <img src="salam.png" loading="lazy" alt="Ucapan Salam Pembuka" class="salam-img">
+  </div>
+  <h2>Undangan Pernikahan</h2>
+    <p>
+      Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa, <br>
+      perkenankan kami mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya pawiwahan/pernikahan putra-putri kami:
+    </p>
+    <div class="pengantin-carousel">
+  <div class="pengantin-slide active">
+  <div class="photo-wrapper">
+  <div class="frame-gold">
+    <img src="pengantin-pria.jpg" loading="lazy" alt="Pengantin Pria" class="foto-pengantin">
+  </div>
+  <img src="ornament-bottom.png" loading="lazy" class="ornament ornament-bottom">
+</div>
+<div class="nama-wrapper">
+  <button class="prev">
+    <img src="prev.png" loading="lazy" alt="Prev">
+  </button>
+  <h3 class="nama">I Gede Nova Surya Pranata</h3>
+  <button class="next">
+    <img src="next.png" loading="lazy" alt="Next">
+  </button>
+</div>
+    <p class="desc">Putra Ke-1 dari Bpk. I Nyoman Suryawan, S.T & Ibu Ni Ketut Sukriasih</p>
+  </div>
+  <div class="pengantin-slide">
+  <div class="photo-wrapper">
+  <div class="frame-gold">
+    <img src="pengantin-wanita.jpg" loading="lazy" alt="Pengantin Wanita" class="foto-pengantin">
+  </div>
+  <img src="ornament-bottom.png" loading="lazy" class="ornament ornament-bottom">
+</div>
+<div class="nama-wrapper">
+  <button class="prev">
+    <img src="prev.png" loading="lazy" alt="Prev">
+  </button>
+  <h3 class="nama">Ni Kadek Maharindani</h3>
+  <button class="next">
+    <img src="next.png" loading="lazy" alt="Next">
+  </button>
+</div>
+    <p class="desc">Putri Ke-2 dari Bpk. I Nyoman Sumawa & Ibu Ni Wayan Suartini</p>
+  </div>
+  <!-- Dot indikator -->
+  <div class="carousel-dots"></div>
+</div>
+  </div>
+    <p>Yang akan dilaksanakan pada:</p>
+    <div class="tanggal-wrapper">
+  <div class="tanggal-kiri">
+    <span class="hari">KAMIS</span>
+    <span class="angka">25</span>
+    <span class="bulan">SEPTEMBER</span>
+    <span class="tahun">2025</span>
+  </div>
+  <div class="tanggal-kanan">
+    <span class="badge">RESEPSI NIKAH</span>
+    <div class="waktu">Pukul: <strong>09.00 WIB</strong> s/d selesai</div>
+    <div class="lokasi">Bertempat di<br><strong>Desa Kubu, Kec. Bangli<br>Kab. Bangli</strong></div>
+  </div>
+</div>
+    <p>Merupakan suatu kehormatan dan kebahagiaan kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada putra-putri kami. <br>
+      Atas kehadiran serta doa restunya, kami sekeluarga mengucapkan  terima kasih.</p>
+  <!-- Blok keluarga -->
+<div class="keluarga-wrapper">
+  <div class="keluarga kiri">
+    <p>Kel. Bpk. I Nyoman Suryawan, S.T <br> & Ibu Ni Ketut Sukriasih</p>
+  </div>
+  <div class="keluarga kanan">
+    <p>Kel. Bpk. I Nyoman Sumawa <br> & Ibu Ni Wayan Suartini</p>
+  </div>
+</div>
+  <div class="salam-wrapper salam-penutup">
+    <img src="salam-penutup.png" loading="lazy" alt="Ucapan Salam Penutup" class="salam-img">
+  </div>
+  </div>
+  </section>
+
+  <!-- Halaman 3 -->
+  <section class="page3" id="page3" style="display:none;">
+    <h2>Menuju Hari Bahagia</h2>
+    <h3>25 September 2025</h3>
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <!-- Halaman 4 -->
+  <section class="page4" id="page4" style="display:none;">
+    <img src="ornamen.png" loading="lazy" alt="Ornamen" class="ornamen ornamen-top-left">
+    <img src="ornamen.png" loading="lazy" alt="Ornamen" class="ornamen ornamen-top-right">
+    <h2>Lokasi Acara</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3946.7633207177887!2d115.36170307501182!3d-8.424888991614287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMjUnMjkuNiJTIDExNcKwMjEnNTEuNCJF!5e0!3m2!1sid!2sid!4v1757681776196!5m2!1sid!2sid"></iframe>
+      <a href="https://goo.gl/maps/4qf68QJaPuUhYVvW7?g_st=aw" 
+     target="_blank" 
+     class="maps-btn">
+     📍 Buka di Google Maps
+  </a>
+  </section>
+
+    <!-- Halaman 6 (Hadiah) -->
+  <section class="page6" id="page6" style="display:none;">
+    <img src="ornamen.png" alt="Ornamen" loading="lazy" class="ornamen ornamen-top-left">
+    <img src="ornamen.png" alt="Ornamen" loading="lazy" class="ornamen ornamen-top-right">
+    <h2>Berikan Hadiah untuk Pengantin</h2>
+    <p class="page-subtitle">
+  Doa restu adalah hadiah terindah. 
+  Jika memberi adalah ungkapan kasih, dengan syukur kami menerimanya. 
+  Terima kasih atas cinta dan dukungan Anda.
+    </p>
+    <button class="gift-btn" onclick="openGiftPopup()">🎁 Kirim Hadiah</button>
+  </section>
+
+  <!-- Popup Rekening -->
+  <div class="gift-popup" id="giftPopup">
+    <div class="gift-popup-content">
+      <span class="close-btn" onclick="closeGiftPopup()">&times;</span>
+      <h3>Nomor Rekening</h3>
+      <img src="bank-logo.png" loading="lazy" alt="Bank Logo" class="bank-logo">
+      <p id="rekening">4628 0100 5878 505</p>
+      <p>a.n. Ni Kadek Bunga Pradewi</p>
+      <button class="copy-btn" onclick="copyRekening()">
+    <img src="copy-icon.png" loading="lazy" alt="Copy" class="copy-icon">
+      Salin Nomor Rekening
+    </button>
+      <p id="copyNotif" style="display:none; color:green; margin-top:10px;">Nomor Rekening Tersalin ✅</p>
+    </div>
+  </div>
+
+<section class="page5" id="page5" style="display:none;">
+  <div class="form-container">
+    <h2>Kesan & Pesan</h2>
+    <p class="page-subtitle">
+  Setiap doa dan ucapan Anda adalah kebahagiaan yang tak ternilai. 
+  Terima kasih atas kasih dan perhatian yang tulus.
+    </p>
+  <form id="guestForm">
+  <div class="row-inline">
+    <input type="text" id="nama" placeholder="Nama" required>
+    <input type="text" id="alamat" placeholder="Alamat" required>
+  </div>
+  <textarea id="pesan" placeholder="Tulis kesan & pesan..." required></textarea>
+  <select id="kehadiran" required>
+    <option value="">Konfirmasi Kehadiran</option>
+    <option value="Hadir">Hadir</option>
+    <option value="Tidak Hadir">Tidak Hadir</option>
+  </select>
+  <button type="submit">Kirim</button>
+  <div class="loader" id="formLoader"></div>
+  </form>
+  </div>
+
+  <!-- output komentar tetap di luar background -->
+  <div class="messages" id="messages"></div>
+</section>
+
+  <!-- Musik -->
+  <audio id="bgMusic" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+  <!-- Tombol kontrol -->
+<div class="controls">
+  <button class="music-control" id="musicControl">
+    <img src="icon-music.png" loading="lazy" alt="Music">
+  </button>
+  <button class="back-control" id="backControl">
+    <img src="icon-back.png" loading="lazy" alt="Back">
+  </button>
+</div>
+
+  <!-- Navigasi vertikal -->
+<div class="side-menu">
+  <ul>
+    <li><button onclick="scrollToPage('page1')"><img src="icon1.png" loading="lazy" alt="Page 1"></button></li>
+    <li><button onclick="scrollToPage('page2')"><img src="icon2.png" loading="lazy" alt="Page 2"></button></li>
+    <li><button onclick="scrollToPage('page3')"><img src="icon3.png" loading="lazy" alt="Page 3"></button></li>
+    <li><button onclick="scrollToPage('page4')"><img src="icon4.png" loading="lazy" alt="Page 4"></button></li>
+    <li><button onclick="scrollToPage('page6')"><img src="icon6.png" loading="lazy" alt="Page 6"></button></li>
+    <li><button onclick="scrollToPage('page5')"><img src="icon5.png" loading="lazy" alt="Page 5"></button></li>
+  </ul>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
