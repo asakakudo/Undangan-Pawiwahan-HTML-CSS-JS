@@ -45,7 +45,7 @@ body, html {
 
 @font-face {
   font-family: 'Sans2';
-  src: url('LEMONMILK-Light.otf') format('truetype');
+  src: url('LEMONMILK-Regular.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -213,7 +213,7 @@ h2.animate {
   font-family: 'Script1', cursive; /* kasih font elegan */
   font-size: 28px;
   font-weight: bold;
-  color: #ffd700; /* emas */
+  color: #d48b26; /* emas */
   margin: 6px 0;
   text-shadow: 0 0 6px rgba(0,0,0,0.5);
 }
@@ -230,7 +230,7 @@ h2.animate {
 .btn-buka {
   padding: 14px 30px;
   font-size: 9px;
-  font-family: 'Sans1', sans-serif;
+  font-family: 'Sans2', sans-serif;
   font-weight: 450;
   letter-spacing: 2px;
   border: 2px solid #d48b26;   /* garis kuning */
@@ -557,6 +557,24 @@ h2.animate {
   gap: 60px; /* jarak antara tanggal kiri dan waktu */
 }
 
+/* Semua paragraf di page2 pakai serif */
+.page2 p {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Bagian tanggal di page2 pakai serif */
+.page2 .tanggal-wrapper,
+.page2 .tanggal-wrapper span {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Gift popup - a.n. Ni Kadek Bunga Pradewi pakai Times New Roman */
+.gift-popup-content p:last-of-type {
+  font-family: "Times New Roman", Times, serif;
+  font-style: normal;
+  font-size: 16px; /* opsional, bisa sesuaikan */
+}
+
 .tanggal-kiri {
   display: flex;
   flex-direction: column;
@@ -800,7 +818,7 @@ h2.animate {
 }
 
 .countdown-item .number {
-  font-family: 'Sans1', sans-serif; /* ganti font angka (misal pakai Sans1 dari file kamu) */
+  font-family: 'Sans2', sans-serif; /* ganti font angka (misal pakai Sans1 dari file kamu) */
   font-size: 28px;
   font-weight: bold;
   color: #000;
@@ -856,7 +874,7 @@ h2.animate {
   margin-top: 20px;
   padding: 14px 30px;
   font-size: 16px;
-  font-family: 'Sans1', sans-serif;
+  font-family: 'Sans2', sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
   border: 2px solid #d48b26;   /* garis emas */
@@ -1183,7 +1201,7 @@ h2.animate {
 .gift-btn {
   padding: 14px 30px;
   font-size: 16px;
-  font-family: 'Sans1', sans-serif;
+  font-family: 'Sans2', sans-serif;
   font-weight: 500;
   border: 2px solid #d48b26;   /* garis emas */
   border-radius: 30px;
@@ -1259,7 +1277,7 @@ h2.animate {
   margin: 20px auto 0 auto;   /* center secara horizontal */
   padding: 12px 24px;         /* sedikit lebih kecil biar proporsional */
   font-size: 15px;
-  font-family: 'Sans1', sans-serif;
+  font-family: 'Sans2', sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
   border: 2px solid #d48b26;   /* border emas */
@@ -1476,6 +1494,7 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
 
