@@ -1268,6 +1268,11 @@ h2.animate {
   width: auto !important;
 }
 
+#an {
+  font-family: "Times New Roman", Times, serif !important;
+  font-style: normal;
+}
+
 .copy-btn {
   display: inline-flex;       /* pakai flex biar ikon + teks sejajar */
   align-items: center;
@@ -1493,6 +1498,7 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
 
