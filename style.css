@@ -559,18 +559,18 @@ h2.animate {
 
 /* Semua paragraf di page2 pakai serif */
 .page2 p {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif !important;
 }
 
 /* Bagian tanggal di page2 pakai serif */
 .page2 .tanggal-wrapper,
 .page2 .tanggal-wrapper span {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif !important;
 }
 
 /* Gift popup - a.n. Ni Kadek Bunga Pradewi pakai Times New Roman */
 .gift-popup-content p:last-of-type {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif !important;
   font-style: normal;
   font-size: 16px; /* opsional, bisa sesuaikan */
 }
@@ -1494,6 +1494,7 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
 
