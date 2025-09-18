@@ -250,19 +250,16 @@ form.addEventListener("submit", async function (e) {
   loader.style.display = "block"; // tampilkan loader
 
   const data = { nama, alamat, kehadiran, pesan };
-  const target = "https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec";
-  const url = "https://api.allorigins.win/raw?url=" + encodeURIComponent(target);
-
 
   try {
-    const res = await fetch(url, {
+    const res = await fetch("/api/proxy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
     });
-    
+
     const result = await res.json();
-    console.log("Response dari Google Script:", result); // 🔎 log hasil
+    console.log("Response dari server:", result);
 
     if (result.result === "success") {
       form.reset();
@@ -277,6 +274,29 @@ form.addEventListener("submit", async function (e) {
     loader.style.display = "none"; // sembunyikan loader
   }
 });
+
+// === Ambil komentar lama dari Google Sheets via proxy ===
+async function loadMessages() {
+  try {
+    const res = await fetch("/api/proxy");
+    const data = await res.json();
+    console.log("Komentar lama:", data);
+
+    messages.innerHTML = "";
+    data.reverse().forEach(item => {
+      const msg = document.createElement("div");
+      msg.classList.add("message-item");
+      msg.innerHTML = `<b>${item.nama}</b> (${item.kehadiran})<br>${item.pesan}`;
+      messages.appendChild(msg);
+    });
+  } catch (err) {
+    console.error("Gagal ambil komentar:", err);
+  }
+}
+
+// jalankan saat halaman dibuka
+document.addEventListener("DOMContentLoaded", loadMessages);
+
 
 // === MUSIC CONTROL ===
 const musicControl = document.getElementById("musicControl");
@@ -302,6 +322,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
