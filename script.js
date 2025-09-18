@@ -279,8 +279,16 @@ form.addEventListener("submit", async function (e) {
 async function loadMessages() {
   try {
     const res = await fetch("/api/proxy");
-    const data = await res.json();
-    console.log("Komentar lama:", data);
+    const text = await res.text();
+    console.log("Response mentah:", text);
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (err) {
+      console.error("Bukan JSON, dapat:", text);
+      return;
+    }
 
     messages.innerHTML = "";
     data.reverse().forEach(item => {
@@ -293,6 +301,7 @@ async function loadMessages() {
     console.error("Gagal ambil komentar:", err);
   }
 }
+
 
 // jalankan saat halaman dibuka
 document.addEventListener("DOMContentLoaded", loadMessages);
@@ -313,6 +322,9 @@ musicControl.addEventListener("click", () => {
   }
 });
 
+const text = await res.text();
+console.log("Isi dari server:", text);
+
 // Tombol kembali ke awal
 const backControl = document.getElementById("backControl");
 backControl.addEventListener("click", () => {
@@ -322,6 +334,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
