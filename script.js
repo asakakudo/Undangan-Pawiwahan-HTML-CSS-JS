@@ -252,18 +252,15 @@ form.addEventListener("submit", async function (e) {
   const data = { nama, alamat, kehadiran, pesan };
 
   try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec", {
+    const res = await fetch("YOUR_GOOGLE_SCRIPT_URL", {
       method: "POST",
       body: JSON.stringify(data),
     });
 
     const result = await res.json();
     if (result.result === "success") {
-      const newMsg = document.createElement("div");
-      newMsg.classList.add("message-item");
-      newMsg.innerHTML = `<b>${nama}</b> (${kehadiran})<br>${pesan}`;
-      messages.prepend(newMsg);
       form.reset();
+      loadMessages(); // refresh komentar dari server
     } else {
       alert("Terjadi masalah. Coba lagi.");
     }
@@ -275,6 +272,30 @@ form.addEventListener("submit", async function (e) {
   }
 });
 
+// === Ambil komentar lama dari Google Sheets ===
+async function loadMessages() {
+  try {
+    const res = await fetch("YOUR_GOOGLE_SCRIPT_URL");
+    const data = await res.json();
+
+    messages.innerHTML = ""; // hapus isi lama
+
+    // tampilkan komentar terbaru di atas
+    data.reverse().forEach(item => {
+      const msg = document.createElement("div");
+      msg.classList.add("message-item");
+      msg.innerHTML = `<b>${item.nama}</b> (${item.kehadiran})<br>${item.pesan}`;
+      messages.appendChild(msg);
+    });
+  } catch (err) {
+    console.error("Gagal ambil komentar:", err);
+  }
+}
+
+// jalankan saat halaman dibuka
+document.addEventListener("DOMContentLoaded", loadMessages);
+
+// === MUSIC CONTROL ===
 const musicControl = document.getElementById("musicControl");
 const bgMusic = document.getElementById("bgMusic");
 
@@ -298,6 +319,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
