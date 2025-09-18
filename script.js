@@ -250,13 +250,14 @@ form.addEventListener("submit", async function (e) {
   loader.style.display = "block"; // tampilkan loader
 
   const data = { nama, alamat, kehadiran, pesan };
+  const url = "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec";
 
-  try {
-    const res = await fetch("https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-
+  const res = await fetch(url, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(data)
+  });
+    
     const result = await res.json();
     if (result.result === "success") {
       form.reset();
@@ -275,7 +276,7 @@ form.addEventListener("submit", async function (e) {
 // === Ambil komentar lama dari Google Sheets ===
 async function loadMessages() {
   try {
-    const res = await fetch("YOUR_GOOGLE_SCRIPT_URL");
+    const res = await fetch("https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbxdgCu2KBJVvL6Hc1n8affHs9CsXp9uoLzPeNTzEBIdykEP2f9W6vcj0aqc4SnEBdyRHw/exec");
     const data = await res.json();
 
     messages.innerHTML = ""; // hapus isi lama
@@ -319,6 +320,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
