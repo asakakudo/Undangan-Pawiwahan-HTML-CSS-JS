@@ -40,6 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.2 });
 
+    const params = new URLSearchParams(window.location.search);
+  const guest = params.get("to");
+  if (guest) {
+    document.getElementById("guestName").textContent = guest;
+  }
+  
   animatedText.forEach(el => observer.observe(el));
 });
 
@@ -260,4 +266,5 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
