@@ -557,22 +557,10 @@ h2.animate {
   gap: 60px; /* jarak antara tanggal kiri dan waktu */
 }
 
-/* Semua paragraf di page2 pakai serif */
-.page2 p {
-  font-family: "Times New Roman", Times, serif !important;
-}
-
-/* Bagian tanggal di page2 pakai serif */
+.page2 p,
 .page2 .tanggal-wrapper,
 .page2 .tanggal-wrapper span {
   font-family: "Times New Roman", Times, serif !important;
-}
-
-/* Gift popup - a.n. Ni Kadek Bunga Pradewi pakai Times New Roman */
-.gift-popup-content p:last-of-type {
-  font-family: "Times New Roman", Times, serif !important;
-  font-style: normal;
-  font-size: 16px; /* opsional, bisa sesuaikan */
 }
 
 .tanggal-kiri {
@@ -651,31 +639,39 @@ h2.animate {
 
 /* Responsif */
 @media (max-width: 768px) {
+  .page2 p, {
+  font-family: "Times New Roman", Times, serif !important;
+  }
   .tanggal-wrapper {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+    font-family: "Times New Roman", Times, serif !important;
   }
   .tanggal-kanan {
     align-items: center;
+    font-family: "Times New Roman", Times, serif !important;
   }
   /* Tulisan tanggal bagian kanan */
   .tanggal-kanan .badge {
     font-size: 14px;
     padding: 4px 8px;
+    font-family: "Times New Roman", Times, serif !important;
   }
   .tanggal-kanan .waktu {
     font-size: 14px;
     padding: 4px 6px;
+    font-family: "Times New Roman", Times, serif !important;
   }
   .tanggal-kanan .lokasi {
     font-size: 14px;
+    font-family: "Times New Roman", Times, serif !important;
   }
 
   /* Tombol prev/next lebih kecil */
   .nama-wrapper button {
-    width: 35px;
-    height: 35px;
+    width: 45;
+    height: 45px;
   }
 }
 
@@ -684,8 +680,11 @@ h2.animate {
   .tanggal-kanan .waktu,
   .tanggal-kanan .lokasi {
     font-size: 12px;
+    font-family: "Times New Roman", Times, serif !important;
   }
-
+  .page2 p, {
+    font-family: "Times New Roman", Times, serif !important;
+  }
   .nama-wrapper button {
     width: 28px;
     height: 28px;
@@ -1494,6 +1493,7 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
 
