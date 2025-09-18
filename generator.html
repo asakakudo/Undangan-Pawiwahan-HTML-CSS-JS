@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Generator Link Undangan</title>
+  <style>
+    body {
+      font-family: 'Sans-serif', sans-serif;
+      background: linear-gradient(135deg, #fffaf3, #f8efe6);
+      padding: 40px;
+      max-width: 600px;
+      margin: 40px auto;
+      border: 2px solid #d4af37;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      text-align: center;
+      color: #333;
+    }
+
+    h2 {
+      font-family: 'Georgia', serif;
+      font-size: 26px;
+      color: #d4af37;
+      margin-bottom: 20px;
+      text-shadow: 0 0 4px rgba(212, 175, 55, 0.5);
+    }
+
+    input {
+      padding: 12px 18px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: 2px solid #d4af37;
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: 2px solid #d4af37;
+      background: linear-gradient(90deg, #000000aa, #333333);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 8px #d4af37;
+      margin: 5px;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #333333, #000000);
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #d4af37;
+    }
+
+    .output {
+      margin-top: 25px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      border: 2px dashed #d4af37;
+      word-break: break-word;
+    }
+
+    .preview {
+      margin-top: 20px;
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .preview .name {
+      font-family: 'Script1', cursive; /* font elegan kalau ada */
+      font-size: 24px;
+      font-weight: bold;
+      color: #d4af37;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      display: block;
+      margin: 8px 0;
+    }
+
+    .notif {
+      margin-top: 10px;
+      font-size: 14px;
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Generator Link Undangan</h2>
+  <p>Masukkan nama tamu, lalu salin link yang muncul untuk dikirim:</p>
+  
+  <input type="text" id="guestName" placeholder="Contoh: Desak Lestari">
+  <button onclick="generateLink()">Buat Link</button>
+
+  <div class="output" id="output"></div>
+  <div class="notif" id="copyNotif">Link berhasil disalin ✅</div>
+
+  <script>
+    let currentLink = "";
+
+    function generateLink() {
+      const name = document.getElementById("guestName").value.trim();
+      if (!name) {
+        alert("Isi dulu nama tamunya!");
+        return;
+      }
+      const encoded = encodeURIComponent(name);
+      currentLink = window.location.origin + "/index.html?to=" + encoded;
+      
+      document.getElementById("output").innerHTML = `
+        <b>Link Undangan:</b><br>
+        <a href="${currentLink}" target="_blank">${currentLink}</a>
+        <br><br>
+        <button onclick="copyLink()">Salin Link</button>
+        <div class="preview">
+          <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+          <span class="name">${name}</span>
+          <p>di Tempat</p>
+        </div>
+      `;
+    }
+
+    function copyLink() {
+      if (!currentLink) return;
+      navigator.clipboard.writeText(currentLink).then(() => {
+        const notif = document.getElementById("copyNotif");
+        notif.style.display = "block";
+        setTimeout(() => notif.style.display = "none", 2000);
+      });
+    }
+  </script>
+</body>
+</html>
