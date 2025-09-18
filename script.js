@@ -322,8 +322,6 @@ musicControl.addEventListener("click", () => {
   }
 });
 
-const text = await res.text();
-console.log("Isi dari server:", text);
 
 // Tombol kembali ke awal
 const backControl = document.getElementById("backControl");
@@ -334,6 +332,7 @@ backControl.addEventListener("click", () => {
 function scrollToPage(pageId) {
   document.getElementById(pageId).scrollIntoView({ behavior: 'smooth' });
 }
+
 
 
 
