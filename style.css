@@ -1,6 +1,7 @@
 body, html {
   margin: 0; padding: 0;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .background-fixed {
@@ -854,6 +855,8 @@ h2.animate {
 
 .page5 .form-container {
   position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
   width: 100%;
   padding: 60px 20px 40px;
   border-radius: 0;
@@ -1412,4 +1415,5 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
