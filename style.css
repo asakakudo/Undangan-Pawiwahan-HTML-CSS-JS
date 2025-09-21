@@ -31,7 +31,7 @@ body, html {
 
 @font-face {
   font-family: 'Script1';
-  src: url('Hello Valentina.ttf') format('truetype');
+  src: url('josephsophia.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -1498,6 +1498,7 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
 
