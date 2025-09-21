@@ -959,7 +959,7 @@ h2.animate {
 }
 
 .page5 h2 {
-  font-family: 'Script1', cursive; /* pakai font elegan */
+  font-family: 'MyScript', cursive; /* pakai font elegan */
   font-size: 60px;
   color: #000000; /* emas */
   margin-bottom: 25px;
@@ -1498,6 +1498,7 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
 
