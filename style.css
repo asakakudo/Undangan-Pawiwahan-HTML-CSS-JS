@@ -211,7 +211,7 @@ h2.animate {
 
 #guestName {
   font-family: 'Script1', cursive; /* kasih font elegan */
-  font-size: 36px;
+  font-size: 42px;
   font-weight: bold;
   color: #d48b26; /* emas */
   margin: 6px 0;
@@ -1498,6 +1498,7 @@ body.page6-active .side-menu {
   .page1 h1 { font-size: 28px; }
   .countdown { font-size: 20px; }
 }
+
 
 
 
